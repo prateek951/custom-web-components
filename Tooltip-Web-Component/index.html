@@ -11,6 +11,7 @@
       }
     </style>
     <script src="tooltip.js"></script>
+    <script src="../Confirm-Component/confirm-link.js"></script>
   </head>
   <body>
     <p>
@@ -21,5 +22,8 @@
     </p>
     <ihub-tooltip>This is Instillhub Tooltip</ihub-tooltip>
     <ihub-tooltip></ihub-tooltip>
+    <div>This does not get the styles of the Shadow DOM Web Components</div>
+    <!-- <a href="https://www.google.com">Google</a> -->
+    <a is="wc-confirm-link" href="https://www.google.com">Google</a>
 </body>
 </html>

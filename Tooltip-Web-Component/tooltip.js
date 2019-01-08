@@ -12,7 +12,16 @@ class Tooltip extends HTMLElement {
     //custom element shadow dom
     this.attachShadow({ mode: "open" });
     // const template = document.querySelector("#tooltip-template");
-    this.shadowRoot.innerHTML = `<slot>Some default</slot>
+    this.shadowRoot.innerHTML = `
+        <style>
+            div {
+                background-color: black;
+                color:white;
+                position:absolute;
+                z-index: 10;
+            }
+        </style>
+        <slot>Some default</slot>
         <span>(?)</span>`;
 }
   connectedCallback() {
@@ -30,10 +39,6 @@ class Tooltip extends HTMLElement {
   _showTooltip() {
     this._ToolTipContainer = document.createElement("div");
     this._ToolTipContainer.textContent = this._ToolTipText;
-    this._ToolTipContainer.style.backgroundColor = "black";
-    this._ToolTipContainer.style.color = "white";
-    this._ToolTipContainer.style.position = "absolute";
-    this._ToolTipContainer.style.zIndex = "10";
     this.shadowRoot.appendChild(this._ToolTipContainer);
   }
   _hideTooltip() {

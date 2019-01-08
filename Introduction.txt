@@ -1,0 +1,267 @@
+What are Web Components ? 
+
+Web components are really are your own custom HTML elements. 
+HTML elements that are not built into the browser but they are  
+created by you as a developer or by some other developer and you are using 
+that in your project. Such a web component behind the scenes using Javascript and 
+other HTML and they are reusable just like components and can be used in any application 
+for that matter. 
+Web components is actually a broad term for couple of specifications that are built into 
+modern browsers that make up the web components. 
+Custom HTML element is just one part of that specification 
+It is arguably the most important one because this defines a couple of features 
+that modern browsers expose to you and you can use these features in javascript then 
+These features allow us to register our own HTML tags and define some basic logic behind it 
+However this alone will not give you great web components. 
+
+Another important specification that makes up the web components term is the shadow dom 
+specification.Shadow DOM is all about having a separate DOM of tree of DOM nodes behind your custom 
+elements that is separated from your normal dom.This helps you for example for scoping your styles to 
+the custom element. So that styling that you set up for your web components does not interfere with other 
+parts of the application 
+
+Templates and Slots is another part of the specification 
+Your custom element in the end will be a combination of default HTML elements. 
+Because in the end browser only knows how to handle the default HTML elements. 
+But you can compose them, add styling and add javascript logic to create more powerful 
+widgets like the modal you saw. Here you define the core structure behind your elements. 
+So you basically define a template which is then rendered as a Shadow DOM and slots are helpful 
+for exposing certain entry points like that title we used.That allows us to pass dynamic content into 
+our web components. So that developers using those components can use them and their set of features 
+that are baked in. 
+
+Another specification is the HTML Imports Specification 
+That was meant to be a feature to allow importing of HTML files into HTML 
+files so that you can define these templates for the components in HTML files which 
+are then imported dynamically
+
+
+Why Web Components ? 
+Custom Elements and Web components are the terms that can be interchangeably be used. 
+This allows you to encapsulate logic and UI into one custom HTML element tag which we then 
+can reuse across the page or reuse across multiple projects. Simply take that Javascript file 
+and drop it into any other project. 
+Easy to understand 
+Separation of concerns 
+Every element takes care about one task 
+reusablity means we have to write a logic once and reuse it multiple times. 
+We dont have to worry about overlapping logic and we also dont have to write the logic 
+for the User Interface more than once. The same advantage holds when we share our components across 
+multiple projects. We can even have projects written in different frameworks 
+Let us say Angular and React and we can use one and the same web component in both 
+We would be able to share React components with Angular Project. 
+Reuse core UI elements across multiple projects. You could create a set of core UI elements 
+that have your corporate identity baked in like a modal,toolbar,side drawer which you can use in all 
+your projects. We can also publish components or set of components even to NPM and install it to any project. 
+
+WEB COMPONENT VS ANGULAR,REACT,VUE,JQUERY 
+
+Web Components <---> Framework <---> Libraries 
+
+Component Driven approach is there in all these choices 
+Splitting logic into components. 
+
+Libraries like Jquery have great advantage of being drag and drop 
+an import with a script tag and you are good to go. 
+Downside is that you have multiple imports potentially atleast 
+and you can have version conflicts as well due to other dependencies of Jquery
+You might import loads of code into your project that your project might never need. 
+You might not need the AJAX functionality of the Jquery plugin, you might not need certain 
+dom traversal methods.If you are building a SPA Jquery will quickly hit its limits. 
+
+Frameworks 
+More than just components (routing and state management)
+These frameworks give you everything you need to write complex frontend User 
+interfaces most of the time often SPAs 
+Most of the time we have a clear set of rules of how we should structure our code 
+for how we should write code and solve problems.e.g state management,form validation etc. 
+
+Downside of the framework is the complexity, the steeper learning curve that you have. 
+Components are not reusable across other frameworks.Vue components cannot be used in Angular for 
+that matter etc. 
+
+Web Components 
+
+Solve the downside of the frameworks because they are just the vanilla js 
+We will use a tool called Stencil.js for this. 
+We dont have any external dependencies and we do not need any special framework 
+We ship less code because it is just our component code. No overhead introduced by the 
+framework and it is easily reusable since we use just javascript and all these frameworks 
+and plugins use Javascript.We can bring our components into any application into the frontend of any 
+web application that we are building.
+
+Complexity Steeper learning curve 
+
+You can build the entire user interface with web components but it will still lack state management for  
+complex application,routing solution,navigation,parsing url etc. 
+Building SPAs with Web components will require extra libraries take will take care of all these concerns 
+
+Course Outline (For even legacy browsers)
+
+Getting Started 
+Javascript Refresher (Next Gen Javascript features)
+The Basics of Web Components 
+Advanced Concepts 
+Building More Complex Components 
+Stencil.js Introduction and Advantages 
+Advanced Stencil.js 
+Publishing and share web components 
+
+ES6 + Javascript Refresher 
+
+let and const 
+Different ways of creating variables 
+
+let and const should be used over var 
+
+let you can say is the new var 
+let is used to create a variable which really is one. 
+Use const if you plan on creating the constant value 
+which you basically assign once and it will never change. 
+
+Arrow functions different syntax to create javascript functions 
+
+const myFunc = () => {
+
+}
+It solves a lot of the issues that you often have with the this keyword 
+
+Exports and Imports (Modules)
+
+Writing the modular code. 
+
+Inside of a Javascript file we can import content from other files 
+
+Default Export 
+You can import default and only export or the name in the receiving file is up to 
+you. 
+Import the clean constant by its name 
+
+
+default Exports 
+
+import person from './person.js';
+import prs from './person.js'
+
+named export 
+import { smth } from './utility.js'
+assign a alias 
+import { smth as Smith } from './utility.js'
+
+Classes 
+Another core feature of next gen javascript are classes.
+Classes are blueprint for javascript objects. 
+
+Classes,Properties and Methods 
+
+Properties are like variables attached to classes and objects 
+Methods are like functions attached to classes and objects 
+
+constructor() {
+    this.myProperty = 'value';
+}
+
+NextGen Feature ES7 
+myProperty = 'value'; => transformed to use constructor function 
+myMethod = () => {} //Since we use arrow functions as a property value 
+we got no problem with the this keyword 
+
+Spread and Rest Operators 
+... 
+
+Spread operator 
+Used to split up array elements OR object properties 
+
+Refreshing Array functions 
+
+const nums = [1,2,3];
+const doubleNums = nums.map(n => n*2);
+console.log(doubleNums);
+
+Web Components Basics 
+Learning Web Components from Scratch 
+
+Browser Support 
+Googling Web Components 
+WebComponents.org 
+
+Browser Support 
+Chrome, Firefox,Safari and Opera supports all these features 
+of Web Components.Edge does not support all though 
+I would recommend to use Chrome. 
+
+CanIUse website check for browser support as well. 
+
+Types of Custom Elements 
+
+Custom elements have two different ways for being created 
+One is called the autonomous elements.These are those custom elements 
+which do not depend on anything that are independent of the existing HTML elements 
+that are built into the browser.
+
+Alternatively you can also create your custom elements by extending the built in elements 
+Like extending the built in button or the built in paragraphs. 
+And that can also be a way of creating custom elements. 
+
+Browser follows a certain web component lifecycle while instantiating our custom HTML elements 
+in the DOM 
+
+WEB COMPONENT LIFECYCLE 
+
+The first thing that gets executed is the constructor 
+because this always get executed when an object gets created based 
+on the class, then the class constructor gets executed 
+So this is essentially called when the element is created. 
+The moment when the object is created is not the moment when it is attached in 
+the real dom by the browser.Instead it is created first in the memory and is not a 
+part in the DOM at the beginning.Constructor is great for some basic initialisations 
+some basic values for the properties and variables that you may be using in your class 
+But it is the wrong place for accessing the DOM because your custom element has not been 
+added to the DOM yet 
+There is another method that you can add in your class which will be executed by the browser 
+once the custom element has been mounted to the browser's dom and that is the connectedCallback() 
+method
+
+connectedCallback() method 
+This is called when your element has been attached to the DOM 
+This is the place for the DOM initialisations.So this is where you can 
+start accessing the DOM and start adding content to the DOM
+
+
+disconnectedCallback() method 
+This method is called by the browser whenever your custom element gets detached from 
+the Browser's DOM.That is when you destroy that element which you can do through Javascript 
+for example.Therefore this method is great for some cleanup work 
+Suppose you were sending some HTTP request this is where you could have cancelled it. 
+
+attributeChangedCallback() method 
+Listening to changes to the attributes of your own elements 
+Observed attribute updates 
+Update the data and DOM when some attributes which can be passed to your web component changes. 
+
+***********
+Prepend the method with an underscore which we should not call accidentally 
+
+SHADOW DOM 
+
+Shadow DOM encapsulates all our logic and styles that we want should not be affected by the outside native 
+DOM and therefore should be hidden in Normal DOM.So that it does not get affected by the global styles.This is done 
+using the ShadowDOM and the templates specification of the web components 
+This DOM is not connected to the real dom. 
+
+To detach the custom element from the light normal dom 
+we can use the follow configuration in the constructor 
+and whenever we append any element to the custom dom we do so in 
+the shadow dom and not in the normal dom, hence global styles wont affect our 
+custom component. 
+
+this.attachShadow({ mode: "open" });
+
+If we want to develop a reusable web component we need 
+to define the template for the web component inside the 
+web component script file only and not inside the html file 
+and then dump the script into the HTML file where we want to use the 
+web component. 
+
+autonomous web components are created by extending the 
+HTMLElement 
