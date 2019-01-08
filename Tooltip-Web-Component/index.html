@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Web Components</title>
+    <style>
+      div {
+        border: 2px solid orange;
+      }
+    </style>
     <script src="tooltip.js"></script>
   </head>
   <body>
-    <p><ihub-tooltip markContent="Web Components is a set of standards">Web Components</ihub-tooltip> are Awesome !</p>
+    <p>
+      <ihub-tooltip markContent="Web Components is a set of standards"
+        >Web Components</ihub-tooltip
+      >
+      are Awesome !
+    </p>
     <ihub-tooltip>This is Instillhub Tooltip</ihub-tooltip>
-  </body>
+    <ihub-tooltip></ihub-tooltip>
+</body>
 </html>
